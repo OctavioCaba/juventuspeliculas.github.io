@@ -1,0 +1,118 @@
+API: 78a508a360777691fbb37d5cd688d697
+
+"request_token": "ecd89cda4d6229d9c8e04d4b6f8cea004991ed2a"
+-----
+request_token:de7cc4aba5b09562f665d92c710fdc968dbdea5c (NUEVO)
+
+"session_id": "c0bfda918e5086bf8fb2dde1703c6fa31f490bc4"
+
+/**/
+ACCOUNT DETAILS
+{
+  "avatar": {
+    "gravatar": {
+      "hash": "08048ab2f104d88c7f66db81f330fc2a"
+    }
+  },
+  "id": 9712227,
+  "iso_639_1": "es",
+  "iso_3166_1": "AR",
+  "name": "",
+  "include_adult": true,
+  "username": "OctavioCaba"
+}
+/**/
+
+
+An example request looks like:
+
+https://api.themoviedb.org/3/movie/38757?api_key=78a508a360777691fbb37d5cd688d697
+
+
+Token de acceso de lectura a la API (v4 auth):
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3OGE1MDhhMzYwNzc3NjkxZmJiMzdkNWNkNjg4ZDY5NyIsInN1YiI6IjVmN2ExN2Y5NDNjZDU0MDAzNTUwZTJjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8mJ7r2JKnc4HJKsV8W0deTFidupVROkLfvnqv9lLUJ4
+
+
+//LINK PARA poster_path
+https://image.tmdb.org/t/p/w500
+
+
+
+EJEMPLO
+
+{
+    "adult": false,
+    "backdrop_path": "/w9K57ZxMuj12LPHf6aTKMLSG1ZS.jpg",
+    "belongs_to_collection": {
+        "id": 529,
+        "name": "Wallace & Gromit Collection",
+        "poster_path": "/rD3IjijBs1pC8XDE9q9FSKsjjk.jpg",
+        "backdrop_path": "/fsv2eKzskPsEag3NORLQBW1wac5.jpg"
+    },
+    "budget": 0,
+    "genres": [
+        {
+            "id": 12,
+            "name": "Adventure"
+        },
+        {
+            "id": 16,
+            "name": "Animation"
+        },
+        {
+            "id": 35,
+            "name": "Comedy"
+        },
+        {
+            "id": 878,
+            "name": "Science Fiction"
+        },
+        {
+            "id": 10751,
+            "name": "Family"
+        }
+    ],
+    "homepage": "https://www.wallaceandgromit.com/films/a-grand-day-out",
+    "id": 530,
+    "imdb_id": "tt0104361",
+    "original_language": "en",
+    "original_title": "A Grand Day Out",
+    "overview": "Wallace and Gromit have run out of cheese and this provides an excellent excuse for the animated duo to take their holiday on the moon, where, as everyone knows, there is ample cheese. The moon is inhabited by a mechanical caretaker, who is not too happy about the two visitors from earth that nibble on the moon.",
+    "popularity": 12.861,
+    "poster_path": "/og1s6iwv73WMShgNzg0WTtmrKXy.jpg",
+    "production_companies": [
+        {
+            "id": 297,
+            "logo_path": "/ykJbf1z5qIreJrHWfnh1ev1alkD.png",
+            "name": "Aardman Animations",
+            "origin_country": "GB"
+        },
+        {
+            "id": 17700,
+            "logo_path": null,
+            "name": "NFTS",
+            "origin_country": "GB"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "GB",
+            "name": "United Kingdom"
+        }
+    ],
+    "release_date": "1990-05-18",
+    "revenue": 0,
+    "runtime": 23,
+    "spoken_languages": [
+        {
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "",
+    "title": "A Grand Day Out",
+    "video": false,
+    "vote_average": 7.4,
+    "vote_count": 483
+}
