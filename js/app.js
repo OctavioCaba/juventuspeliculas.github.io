@@ -10,35 +10,39 @@ const span = document.getElementsByClassName("cerrar");
 const contenedorPeliculaSeleccionada = document.getElementById('contenedor-pelicula-seleccionada');
 const contenedorVariasSeleccionadas = document.getElementById('contenedor-varias-seleccionadas');
 const modalSobreMi = document.getElementById('modal-yo');
+const flechaIzquierda = document.getElementById('flecha-izquierda');
+const flechaDerecha = document.getElementById('flecha-derecha');
 
-//REQUEST A API
+//VARIABLES
 const apiKey = "78a508a360777691fbb37d5cd688d697";
 let listaPop;
 let listaTop;
+let contadorCarrusel = 0;
+let pagina = 1;
 
-document.addEventListener("DOMContentLoaded", async() => {
-    //REQUEST PELICULAS POPULARES
-    try {
-        await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-ES&page=1`)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    console.log("ERROR REQUEST PELIS POPULARES");
-                }
-            })
-            .then(data => {
-                listaPop = data;
-            });
-    } catch (error) {
-        console.log(error);
+//FLECHAS CARRUSEL
+flechaIzquierda.addEventListener('click', () => {
+    if (contadorCarrusel >= 1) {
+        contadorCarrusel -= 1;
+        pagina = contadorCarrusel + 1
+        contenedorPeliculas.innerHTML = "";
+        requestTopRated();
     }
+})
 
-    cargarPelisPop(listaPop);
+flechaDerecha.addEventListener('click', () => {
+    if (contadorCarrusel <= 2) {
+        contadorCarrusel += 1;
+        pagina = contadorCarrusel + 1;
+        contenedorPeliculas.innerHTML = "";
+        requestTopRated();
+    }
+})
 
+const requestTopRated = async() => {
     //REQUEST PELICULAS TOP RATED
     try {
-        await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=es-ES&page=1`)
+        await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=es-ES&page=${pagina}`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -54,8 +58,35 @@ document.addEventListener("DOMContentLoaded", async() => {
     }
 
     cargarPelisTop(listaTop);
+    detectarPeliculas();
+}
 
+document.addEventListener("DOMContentLoaded", async() => {
+    requestTopRated();
 
+    //REQUEST PELICULAS TERROR
+    try {
+        await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-ES&page=1`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.log("ERROR REQUEST PELIS TERROR");
+                }
+            })
+            .then(data => {
+                listaPop = data;
+            });
+    } catch (error) {
+        console.log(error);
+    }
+
+    cargarPelisPop(listaPop);
+
+    detectarPeliculas();
+})
+
+const detectarPeliculas = () => {
     //SELECCIONAR PELICULAS
     const pelicula = document.getElementsByClassName('pelicula');
     for (let i = 0; i < pelicula.length; i++) {
@@ -71,28 +102,9 @@ document.addEventListener("DOMContentLoaded", async() => {
                     mostrarModal1(p);
                 }
             })
-
-            if (pelicula[i].id == 38757) {
-                try {
-                    await fetch('https://api.themoviedb.org/3/movie/38757?api_key=78a508a360777691fbb37d5cd688d697&language=es-ES')
-                        .then(response => {
-                            if (response.ok) {
-                                return response.json();
-                            } else {
-                                console.log('FALLÓ REQUEST');
-                            }
-                        })
-                        .then(data => {
-                            enredados = data;
-                        });
-                } catch (error) {
-                    console.log(error);
-                }
-                mostrarModal1(enredados);
-            }
         })
     }
-})
+}
 
 
 //CARGAR PELICULAS
@@ -125,13 +137,13 @@ const cargarPelisPop = data => {
         }
     })
 
-    //LISTA OSITO
+    //LISTA FAMILIA
     listaCompleta.forEach(p => {
-        if (p.genre_ids.includes(12) || p.genre_ids.includes(18)) {
+        if (p.genre_ids.includes(12) || p.genre_ids.includes(10751)) {
             listaOsito.push(p);
         }
     });
-    listaOsito.slice(0, 4).forEach(p => {
+    listaOsito.slice(0, 5).forEach(p => {
         if (p.poster_path) {
             contenedorOsito.innerHTML += `
             <div class="pelicula" id="${p.id}">
@@ -238,14 +250,6 @@ for (let i = 0; i < span.length; i++) {
         modalSobreMi.style.display = "none";
     })
 }
-
-/* span.onclick = () => {
-    modal1.style.display = "none";
-}
-
-spon.onclick = () => {
-    modalVarios.style.display = "none";
-} */
 
 window.onclick = e => {
     if (e.target == modal1 || e.target == modalVarios || e.target == modalSobreMi) {

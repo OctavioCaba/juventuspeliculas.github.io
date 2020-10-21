@@ -8,6 +8,9 @@ html {
     box-sizing: inherit;
 }
 
+
+/*GLOBALES*/
+
 body {
     margin: 0;
     background: rgb(0, 20, 120);
@@ -17,6 +20,10 @@ body {
 .container {
     max-width: 95%;
     margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -120,12 +127,13 @@ body {
     cursor: pointer;
 }
 
+.sobre-mi-btn:hover {
+    background: rgb(6, 18, 142);
+    background: linear-gradient(90deg, rgb(17, 33, 209) 0%, rgb(111, 122, 243) 100%);
+}
+
 
 /*PELICULAS*/
-
-.filas {
-    margin-top: 40px;
-}
 
 .contenedor-peliculas {
     display: grid;
@@ -134,13 +142,21 @@ body {
 }
 
 section .cat {
+    margin-top: 40px;
     color: #e1e1e1;
+    max-width: 150px;
     font-family: montserrat;
     font-weight: bold;
+    transition: .2s ease all;
+}
+
+section .cat:hover {
+    color: rgb(71, 69, 69);
+    font-size: 18px;
 }
 
 .pelicula {
-    border: 1px solid #707070;
+    border: 1px solid #7a7575;
     height: 300px;
     padding: 7px;
     align-items: center;
@@ -255,6 +271,43 @@ section .cat {
     text-align: center;
     font-family: roboto mono;
     align-self: flex-end;
+}
+
+
+/*CARRUSEL*/
+
+.contenedor-principal {
+    position: relative;
+}
+
+.flecha-izquierda,
+.flecha-derecha {
+    position: absolute;
+    border: none;
+    background: rgba(161, 160, 160, 0.7);
+    font-size: 40px;
+    height: 25%;
+    top: calc(50% - 15%);
+    line-height: 40px;
+    width: 50px;
+    color: rgb(226, 193, 193);
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+    scroll-behavior: smooth;
+}
+
+.flecha-izquierda:hover,
+.flecha-derecha:hover {
+    background: rgba(82, 80, 80, 0.7);
+}
+
+.flecha-izquierda {
+    left: 0;
+}
+
+.flecha-derecha {
+    right: 0;
 }
 
 

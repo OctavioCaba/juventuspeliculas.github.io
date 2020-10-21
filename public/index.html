@@ -23,41 +23,55 @@
             </div>
         </header>
         <section>
-            <div class="filas" id="filas">
+            <a href="https://www.themoviedb.org/movie/top-rated" target="_blank" rel="noopener noreferrer">
                 <p class="cat">Mejor calificadas</p>
-                <div class="contenedor-peliculas" id="contenedor-peliculas-pop"></div>
+            </a>
+            <div class="filas" id="filas">
+                <div class="contenedor-principal">
+                    <button role="button" id="flecha-izquierda" class="flecha-izquierda">
+                            <i class="fas fa-angle-left"></i>
+                        </button>
+                    <div class="contenedor-carrusel">
+                        <div class="carrusel">
+                            <div class="contenedor-peliculas peliculas" id="contenedor-peliculas-pop"></div>
+                        </div>
+                    </div>
+                    <button role="button" id="flecha-derecha" class="flecha-derecha">
+                            <i class="fas fa-angle-right"></i>
+                        </button>
+                </div>
             </div>
-            <div class="filas">
+            <a href="https://www.themoviedb.org/search/movie?query=terror" target="_blank" rel="noopener noreferrer">
                 <p class="cat">Terror</p>
+            </a>
+            <div class="filas" id="filas">
                 <div class="contenedor-peliculas" id="contenedor-terror"></div>
             </div>
-            <div class="filas">
-                <p class="cat">Para mi Osito</p>
-                <div class="contenedor-peliculas" id="contenedor-osito">
-                    <div class="pelicula" id="38757">
-                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bFUreK1CxkUwk4y6W2Qoo88l0UF.jpg" alt="Enredados">
-                        <h3 class="titulo-pelicula">Enredados</h3>
-                    </div>
-                </div>
+            <a href="https://www.themoviedb.org/search/movie?query=familia" target="_blank" rel="noopener noreferrer">
+                <p class="cat">Para la familia</p>
+            </a>
+            <div class="filas" id="filas">
+                <div class="contenedor-peliculas" id="contenedor-osito"></div>
             </div>
         </section>
+    </div>
 
-        <!-- MODALES -->
-        <div id="modal-1" class="modal-1">
-            <div class="modal-1-contenedor">
-                <span class="cerrar cerrar-1">&times;</span>
-                <div class="modal-1-contenido">
-                    <div class="contenedor-pelicula-seleccionada" id="contenedor-pelicula-seleccionada"></div>
-                </div>
+    <!-- MODALES -->
+    <div id="modal-1" class="modal-1">
+        <div class="modal-1-contenedor">
+            <span class="cerrar cerrar-1">&times;</span>
+            <div class="modal-1-contenido">
+                <div class="contenedor-pelicula-seleccionada" id="contenedor-pelicula-seleccionada"></div>
             </div>
         </div>
+    </div>
 
-        <div id="modal-varios" class="modal-varios">
-            <div class="modal-varios-contenedor">
-                <span class="cerrar cerrar-varios">&times;</span>
-                <div class="contenedor-varias-seleccionadas" id="contenedor-varias-seleccionadas"></div>
-            </div>
+    <div id="modal-varios" class="modal-varios">
+        <div class="modal-varios-contenedor">
+            <span class="cerrar cerrar-varios">&times;</span>
+            <div class="contenedor-varias-seleccionadas" id="contenedor-varias-seleccionadas"></div>
         </div>
+    </div>
     </div>
 
     <div id="modal-yo" class="modal-yo">
