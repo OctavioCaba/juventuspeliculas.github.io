@@ -1,4 +1,3 @@
-/* const config = require('../config.js'); */
 const searchBar = document.getElementById('search-bar');
 const searchBtn = document.getElementById('search-btn');
 const sobreMiBtn = document.getElementById('sobre-mi-btn');
