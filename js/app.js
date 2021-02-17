@@ -14,7 +14,7 @@ const flechaIzquierda = document.getElementById('flecha-izquierda');
 const flechaDerecha = document.getElementById('flecha-derecha');
 
 //VARIABLES
-const apiKey = Config.KEY;
+const apiKey = '78a508a360777691fbb37d5cd688d697';
 let listaPop;
 let listaTop;
 let contadorCarrusel = 0;
