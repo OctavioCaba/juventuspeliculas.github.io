@@ -1,3 +1,4 @@
+/* const config = require('../config.js'); */
 const searchBar = document.getElementById('search-bar');
 const searchBtn = document.getElementById('search-btn');
 const sobreMiBtn = document.getElementById('sobre-mi-btn');
@@ -14,7 +15,7 @@ const flechaIzquierda = document.getElementById('flecha-izquierda');
 const flechaDerecha = document.getElementById('flecha-derecha');
 
 //VARIABLES
-const apiKey = config.KEY;
+const apiKey = Config.KEY;
 let listaPop;
 let listaTop;
 let contadorCarrusel = 0;
